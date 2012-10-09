@@ -124,7 +124,7 @@
   ; oh by the way let me introduce a little notation, 
   ; useful when there's a variable in your tap that you're not 
   ; interested in and can't be bothered to choose a name for:
-  (def tuple2g (??<- [?person1] (age ?person1 _))
+  (def tuple2g (??<- [?person1] (age ?person1 _)))
 
 
 
