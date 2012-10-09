@@ -147,7 +147,7 @@
 
   ; you can have several aggregators in a query, 
   ; as long as the "group by" variables are the same:
-  (def tuple3c (?<- [?country ?avg] 
+  (def tuple3c (??<- [?country ?avg] 
 		    (location ?person ?country _ _) (age ?person ?age)
 		    (c/count ?count) (c/sum ?age :> ?sum)
 		    (div ?sum ?count :> ?avg)))
