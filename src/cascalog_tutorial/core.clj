@@ -2,8 +2,7 @@
     (:require [clojure.string :as str])
     (:require [cascalog.conf :as conf])
     (:use [cascalog.checkpoint])
-    (:use cascalog.api
-         [jackknife.seq :only (find-first)])
+    (:use cascalog.api)
     (:require (cascalog [workflow :as w]
                         [ops :as c]
                         [vars :as v]))
