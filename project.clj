@@ -5,6 +5,7 @@
  [org.apache.hadoop/hadoop-core "0.20.2-dev"]
  [cascalog-checkpoint "0.2.0"]
  ]
+ :jvm-opts ["-Xmx1000m"]
  :main cascalog-tutorial.core
  )
 
