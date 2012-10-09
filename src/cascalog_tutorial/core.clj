@@ -136,22 +136,24 @@
 ;;;3 -- Let's aggregate
 ;;;;
 
+(comment 
 
-; this counts all people younger than 30:
-(def tuple3a (??<- [?count] (age _ ?a) (< ?a 30) (c/count ?count)))
+  ; this counts all people younger than 30:
+  (def tuple3a (??<- [?count] (age _ ?a) (< ?a 30) (c/count ?count)))
 
 
-; this counts followees of each individual:
-(def tuple3b (??<- [?person ?count] (follows ?person _)
-              (c/count ?count)))
+  ; this counts followees of each individual:
+  (def tuple3b (??<- [?person ?count] (follows ?person _)
+		     (c/count ?count)))
 
-; you can have several aggregators in a query, 
-; as long as the "group by" variables are the same:
-(def tuple3c (?<- [?country ?avg] 
-		      (location ?person ?country _ _) (age ?person ?age)
-		         (c/count ?count) (c/sum ?age :> ?sum)
-			    (div ?sum ?count :> ?avg)))
+  ; you can have several aggregators in a query, 
+  ; as long as the "group by" variables are the same:
+  (def tuple3c (?<- [?country ?avg] 
+		    (location ?person ?country _ _) (age ?person ?age)
+		    (c/count ?count) (c/sum ?age :> ?sum)
+		    (div ?sum ?count :> ?avg)))
 
+  )
 
 ;;;;
 ;;;4 -- Custom operations
